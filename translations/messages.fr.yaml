@@ -1,0 +1,28 @@
+# modification de la page Panier (accueil)
+
+panier: 
+    titre: Panier
+    table_nom: Nom
+    table_quantite: Quantité
+    table_montant: Montant
+    table_action: Action
+    table_supprimer: Supprimer
+    nb_produit: Il y a nb produits
+
+
+# modification de la page Produit
+
+produit: 
+    titre: Liste des produits
+    table_photo: Photo
+    table_nom: Nom
+    table_quantite: Quantité
+    table_prix: Prix
+    table_vide: Il n'y a aucun produits
+    form_titre: Ajouter au panier
+
+# modification de la page d'un produit
+
+un_produit:
+    quantite: Il y a actuellement nb produits dans le stock
+    prix: coût

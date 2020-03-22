@@ -1,0 +1,37 @@
+# modification de la page Panier (accueil)
+
+panier: 
+    titre: Basket
+    table_nom: Name
+    table_quantite: Quantity
+    table_montant: Amount
+    table_action: Action
+    table_supprimer: Delete
+    nb_produit: There is nb products
+
+
+# modification de la page Produit
+
+produit: 
+    titre: Products list
+    table_photo: Photo
+    table_nom: Name
+    table_quantite: Quantity
+    table_prix: Price
+    table_vide: There are no products
+    form_titre: Add a product
+
+
+# modification de la page d'un produit
+
+un_produit:
+    quantite: There are currenty nb products in stock
+    prix: cost
+
+
+#Form trad
+
+Nom: 'Name'
+Quantite: 'Quantity'
+Prix: 'Price'
+Produit: 'Product'

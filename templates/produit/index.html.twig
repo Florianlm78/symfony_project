@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+<br>
+<h1>{{'produit.titre'|trans}}</h1>
+<br>
+{% if produits is not empty %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{'produit.table_photo'|trans}}</th>
+                <th>{{'produit.table_nom'|trans}}</th>
+                <th>{{'produit.table_quantite'|trans}}</th>
+                <th>{{'produit.table_prix'|trans}}</th>
+            </tr>
+        </thead>
+    
+    <tbody>
+        {% for un_produit in produits %}
+            <tr>
+                <td><img src="{{ asset('uploads/' ~ un_produit.photo)}}" style: width="100px"></td>
+                <td>
+                <a href="{{path('un_produit', {'id':un_produit.id})}}">{{un_produit.nom}}</a>
+                </td>
+                <td>{{un_produit.quantite}}</td>
+                <td>{{un_produit.prix}}€</td>
+                
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+
+{% else %}
+
+<p>Il n'y a aucun produits</p>
+
+{% endif %}
+<br>
+<h2>{{'produit.form_titre'|trans}}</h2>
+<br>
+
+{{form(form_produit)}}
+
+{% endblock %}

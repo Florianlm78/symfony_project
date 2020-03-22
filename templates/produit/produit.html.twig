@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{produit.nom}}{% endblock %}
+
+{% block body %}
+<br>
+<h1>{{produit.nom}}</h1>
+<br>
+<img src="{{ asset('uploads/' ~ produit.photo)}}" style: width="100px"></td>
+<br>
+<br>
+<h4>{{'un_produit.quantite'|trans({'nb':produit.quantite})}}</h4>
+<br>
+<h4> {{produit.nom}} {{'un_produit.prix'|trans}} {{produit.prix}} €</h4>
+<br>
+<a type="button" class="btn btn-danger" href="{{path('delete_produit', {'id':produit.id})}}">Supprimer</a>
+
+<br>
+<br>
+<br>
+
+
+
+<h2>Ajouter au panier</h2>
+{{form(ajout_panier)}}
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

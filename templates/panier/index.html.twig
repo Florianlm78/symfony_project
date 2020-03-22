@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+<br>
+<h1>{{'panier.titre'|trans}}</h1>
+<br>
+
+
+<table class="table">
+        <thead>
+            <tr>
+                <th>{{'panier.table_nom'|trans}}</th>
+                <th>{{'panier.table_quantite'|trans}}</th>
+                <th>{{'panier.table_montant'|trans}}</th>
+                <th>{{'panier.table_action'|trans}}</th>
+            </tr>
+        </thead>
+    
+
+    <tbody>
+
+    {% set produit_montant = 0 %}
+    {% set montant_panier = 0 %}
+    
+
+        {% for un_panier in panier %}
+        {% set produit_montant = un_panier.quantite * un_panier.produit.prix %}
+        {% set montant_panier = montant_panier + produit_montant %}
+            <tr>
+                <td>{{un_panier.produit}}</td>
+                <td>{{un_panier.quantite}}</td>
+                <td>{{produit_montant}}€</td>
+                <td><a href="{{path('panier_delete', {'id': un_panier.id})}}">{{'panier.table_supprimer'|trans}}</a></td>
+            </tr>
+        
+        {% endfor %}  
+    </tbody>
+    </table>
+    <br>
+    <p>{{'panier.nb_produit'|trans({'nb':panier|length})}}</p>
+    <p>Total : {{montant_panier}}€</p>
+
+
+{% endblock %}
